@@ -4,6 +4,7 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         #hashmap + sorting method: time complexity O(m*nlog(n))
         #since we have to sort (nlog(n)) every string (m)
+        #space complexity: O(n+m)
         map = {}
 
         #because sorted anagrams are always the same, we simple sort all the values
@@ -19,4 +20,4 @@ class Solution:
                 map[sort] = [str]
 
         #convert values to list and return
-        return list(map.values())
+        return list(map.values()) #this has time complexity O(n), but we can ignore this
