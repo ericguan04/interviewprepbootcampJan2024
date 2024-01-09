@@ -1,5 +1,8 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
+        #Time Complexity: O(size of the string)
+        #Space Complexity: O(1)
+
         #sliding window
         l, max_len = 0,0
         char_count = {} # counting frequency of each character seen within the window
