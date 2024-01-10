@@ -8,8 +8,9 @@ class ListNode:
 
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        #Linked List + Two Pointer Method:
         #Time Complexity: O(n)
-        #Space Complexity: 
+        #Space Complexity: O(1)
 
         dummy = ListNode(0, head) #create a dummy node followed by given linked list
         #left is at dummy node and right is at the start of head
