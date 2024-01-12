@@ -9,7 +9,8 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        # #recursive solution
+        # #recursive solution; Time Complexity: O(n), where n is the # of nodes in tree
+        #                      Space Complexity O(1)
         # if not root:
         #     return 0
 
@@ -20,7 +21,8 @@ class Solution:
 
 
         #iterative dfs algorithm using stack data structure
-        #Time Complexity: O(n)
+        #Time Complexity: O(n) ; Space Complexity: O(1)
+        #more efficient by implementing the stack directly in our code (take away overhead from recursion)
 
         #create stack that holds the root value and the current depth
         stack = [[root, 1]]
