@@ -9,15 +9,22 @@ class Solution:
         return nums[len(nums)-k]
         '''
 
-        #heap solution
-        #convert array to a max heap
-        #not sure how this solution works, so learn heaps next class
-        heap = nums[:k]
-        heapq.heapify(heap)
+        #time complexity: O(klogn)
+        #space complexity: O(n)
 
-        for num in nums[k:]:
-            if num > heap[0]:
-                heapq.heappop(heap)
-                heapq.heappush(heap, num)
-        
-        return heap[0]
+        #create maxheap by negating minheap
+        nums_maxheap=[]
+        for num in nums:
+            nums_maxheap.append(-num)
+
+        #heapify function: parameter is array I want to convert
+        #pass by reference
+        heapq.heapify(nums_maxheap)
+
+        #continuously pop the root, which is always the max until kth is reached
+        for i in range(k-1):
+            heapq.heappop(nums_maxheap)
+
+        #top of max heap is now the kth largest
+        #negate it to turn it back to normal
+        return -1*heapq.heappop(nums_maxheap)
