@@ -2,6 +2,9 @@ from ast import List
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
+        #time complexity: O(n*2^n)
+        #space complexity: O(n*2^n)
+        
         #backtracking question: decision tree algorithm that explores all possibilities
         res = []
 
